@@ -14,7 +14,9 @@ app.use(express.json());
 
 app.use(cors({
     origin: ["https://qr-code-generator-full-stack-client.vercel.app"],
-    methods:["POST","GET","DELETE"]
+    methods:["POST","GET","DELETE"],
+      allowedHeaders: ['Content-Type', 'Authorization']
+
   }));
 
 app.use(bodyParser.json());
