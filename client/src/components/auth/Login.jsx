@@ -20,7 +20,7 @@ export default function Login() {
     setLoading(true);
     setError("");
     try {
-      const url = "http://localhost:8080/api/auth/login";
+      const url = "https://qr-code-generator-api-beta.vercel.app/api/auth/login";
       const { data: res } = await axios.post(url, data);
 
       localStorage.setItem("token", res.data);

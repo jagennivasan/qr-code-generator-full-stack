@@ -21,10 +21,10 @@ const Dashboard = () => {
         }
 
         const [userResponse, qrCodesResponse] = await Promise.all([
-          axios.get("http://localhost:8080/api/users/me", {
+          axios.get("https://qr-code-generator-api-beta.vercel.app/api/users/me", {
             headers: { "x-auth-token": token },
           }),
-          axios.get("http://localhost:8080/api/qrCodes", {
+          axios.get("https://qr-code-generator-api-beta.vercel.app/api/qrCodes", {
             headers: { "x-auth-token": token },
           }),
         ]);
@@ -50,7 +50,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:8080/api/qrCodes/${id}`, {
+      await axios.delete(`https://qr-code-generator-api-beta.vercel.app/api/qrCodes/${id}`, {
         headers: { "x-auth-token": token },
       });
       setQrCodes(qrCodes.filter((qrCode) => qrCode._id !== id));
