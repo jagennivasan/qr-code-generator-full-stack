@@ -13,11 +13,11 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+    origin: ["https://qr-code-generator-full-stack-client.vercel.app"],
+    methods:["POST","GET","DELETE"],
+      allowedHeaders: ['Content-Type', 'Authorization']
 
+  }));
 
 app.use(bodyParser.json());
 
