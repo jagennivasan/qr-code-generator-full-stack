@@ -12,11 +12,10 @@ connectDB();
 
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "https://qr-code-generator-full-stack-client.vercel.app",
-  })
-);
+app.use(cors({
+    origin: ["https://qr-code-generator-full-stack-client.vercel.app"],
+    methods:["POST","GET","DELETE"]
+  }));
 
 app.use(bodyParser.json());
 
