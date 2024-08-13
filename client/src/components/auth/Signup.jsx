@@ -19,7 +19,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://qr-code-generator-api-beta.vercel.app/api/users";
+      const url = "https://qr-code-generator-full-stack.vercel.app/api/users";
       const { data: res } = await axios.post(url, data);
       navigate("/login");
       console.log(res.message);
