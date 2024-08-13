@@ -27,6 +27,5 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/qrCodes", qrCodeRoutes);
 
-const port = process.env.PORT || 8080;
 
-app.listen(port, () => console.log('Server up and running on port'));
+app.listen(3000, () => console.log('Server up and running on port'));
