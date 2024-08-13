@@ -11,11 +11,13 @@ const app = express();
 connectDB();
 
 app.use(express.json());
-
+app.use(cors());
 app.use(cors({
-    origin: ["https://qr-code-generator-full-stack-client.vercel.app"],
-    methods:["POST","GET","DELETE"]
-  }));
+  origin: 'http://localhost:5173', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 
 app.use(bodyParser.json());
 
@@ -25,6 +27,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/qrCodes", qrCodeRoutes);
 
-// const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
-app.listen(3001, () => console.log('Server up and running on port'));
+app.listen(port, () => console.log('Server up and running on port'));
